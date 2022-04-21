@@ -31,9 +31,11 @@ const favoritesRouter = require("./routes/favs");
 
 const validaToken = require("./routes/validate-token");
 
+// to register
 app.use("/api/user", authRoutesRegister); //api/user/register
+// to login
 app.use("/api/user", authRoutesLogin); //api/user/login
-
+// to get favorites info
 app.use("/api/favs", validaToken, favoritesRouter); //api/user/login
 
 app.get("/", (req, res) => {
